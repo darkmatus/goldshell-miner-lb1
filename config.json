@@ -2,22 +2,13 @@
   "loglevel": -1,
   "miners": [
     {
-      "cryptoname": "hns",
-      "minername": ["Goldshell-HS1", "Goldshell-HS1-Plus"],
-      "pool": {
-        "host": "hns.ss.dxpool.com",
-        "port": 3008,
-        "user": "peterfu.bb",
-        "pass": "x"
-      }
-    },
-    {
       "cryptoname": "lbc",
       "minername": ["Goldshell-LB1"],
+      "minerport": "/dev/ttyACM0",
       "pool": {
-        "host": "lbc.viabtc.com",
-        "port": 3002,
-        "user": "sfgaqw.1",
+        "host": "mining.viabtc.io",
+        "port": 3011,
+        "user": "darkmatus.garden",
         "pass": "x"
       }
     }

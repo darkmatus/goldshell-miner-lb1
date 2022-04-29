@@ -39,8 +39,8 @@ const lb1cfg = {
     targetFreq: 750,  //MHz
     targetVoltage: 430, //mv
     targetTemp: 65,
-    warnTemp: 115,
-    offTemp: 125
+    warnTemp: 120,
+    offTemp: 130
 };
 
 class lb1 extends EventEmitter {

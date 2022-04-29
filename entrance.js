@@ -11,14 +11,16 @@ const supports = [
     minername: ['Goldshell-HS1', 'Goldshell-HS1-Plus'],
     cryptoname: 'hns',
     protocolname: 'stratum',
-    pool: null
+    pool: null,
+    minerport: '/dev/ttyACM0'
   },
   {
     algoname: 'lbry',
     minername: ['Goldshell-LB1'],
     cryptoname: 'lbc',
     protocolname: 'stratum',
-    pool: null
+    pool: null,
+    minerport: '/dev/ttyACM0'
   }
 ]
 
@@ -38,6 +40,7 @@ function isSubSet(Arr_A, Arr_B) {
 }
 
 function isJson(obj){
+  console.log(configFile.miners);return;
   var isjson = typeof(obj) == "object" && Object.prototype.toString.call(obj).toLowerCase() == "[object object]" && !obj.length;
   return isjson;
 }
@@ -53,7 +56,7 @@ function getMinerParameters(config) {
   var Miners = [];
   for (var i = 0; i < supports.length; i++) {
     for (var j = 0; j < config.length; j++) {
-      if (supports[i].cryptoname === config[j].cryptoname && isSubSet(config[j].minername, supports[i].minername)) {
+      if (supports[i].cryptoname === config[j].cryptoname && isSubSet(config[j].minername, supports[i].minername) && config[j].minerport !== 'undefined') {
         Miners.push(supports[i]);
       }
     }

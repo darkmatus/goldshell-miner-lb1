@@ -23,10 +23,10 @@ var miners = [
   {
     name: 'Goldshell-LB1',
     api: lb1
-  },
-  {
-    name: 'unknow',
-    api: unknow
+  // },
+  // {
+  //   name: 'unknow',
+  //   api: unknow
   }
 ];
 
@@ -36,13 +36,19 @@ class miner extends EventEmitter {
     devPath,
     algo,
     varity,
-    crypto
+    crypto,
   }) {
     super();
     var _this = this;
+    _this.config = argv.config || './config.json';
 
     _this.name = name;
-    _this.devPath = devPath;
+    _this.config = JSON.parse(argv.config || './config.json');
+    for (var i = 0; i < config.miners.length; i++) {
+      if (name === config.miners[i].minername) {
+        _this.devPath = config.miners[i].minerport
+      }
+    }
     _this.algo = algo;
     _this.varity = varity;
     _this.crypto = crypto;
