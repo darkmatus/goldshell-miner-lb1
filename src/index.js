@@ -35,6 +35,7 @@ class IbctMiner extends EventEmitter {
     }
 
     _this.detectUsbMiner.on('plug-in', async (Device) => {
+      console.log(Device)
       await _this.addMining(Device);
       return _this.emit('plug-in', Device);
     })

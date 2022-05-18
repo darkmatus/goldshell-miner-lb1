@@ -26,8 +26,8 @@ const supports = [
 
 function help() {
   const text = require('fs').createReadStream(`${__dirname}/help`);
-  text.pipe(process.stderr);
-  text.on('close', () => process.exit(1));
+  // text.pipe(process.stderr);
+  // text.on('close', () => process.exit(1));
 }
 
 function isSubSet(Arr_A, Arr_B) {
