@@ -164,7 +164,7 @@ function sumup(miners) {
       return;
     }
   } else {
-    console.log('Config file is not exist:', config);
+    console.log('Config file does not exist:', config);
     return;
   }
 

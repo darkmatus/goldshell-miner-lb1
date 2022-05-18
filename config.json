@@ -4,7 +4,7 @@
     {
       "cryptoname": "lbc",
       "minername": ["Goldshell-LB1"],
-      "minerport": "/dev/ttyACM0",
+      "minerport": "/dev/lb1",
       "pool": {
         "host": "mining.viabtc.io",
         "port": 3011,

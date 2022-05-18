@@ -3,7 +3,6 @@ const cpu = require('./cpu');
 const hs1 = require('./hs1');
 const hs1plus = require('./hs1plus');
 const lb1 = require('./lb1');
-const unknow = require('./unknow');
 const Debug = require('../log')();
 const COMP = '[minerApi]';
 
@@ -23,17 +22,12 @@ var miners = [
   {
     name: 'Goldshell-LB1',
     api: lb1
-  // },
-  // {
-  //   name: 'unknow',
-  //   api: unknow
   }
 ];
 
 class miner extends EventEmitter {
   constructor({
     name,
-    devPath,
     algo,
     varity,
     crypto,

@@ -99,5 +99,9 @@
   "license": "MIT",
   "main": "src/index.js",
   "name": "goldshellminer",
-  "version": "2.2.5"
+  "version": "2.2.5",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:darkmatus/goldshell-miner-lb1.git"
+  }
 }

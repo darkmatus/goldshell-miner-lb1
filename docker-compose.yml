@@ -1,0 +1,9 @@
+version: "2.1"
+
+services:
+  miner:
+    image: miner:latest
+    volumes:
+      - ./:/usr/app/
+    working_dir: /usr/app/
+    command: tail -F anything

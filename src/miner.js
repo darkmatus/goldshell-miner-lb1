@@ -312,12 +312,13 @@ class Miner extends EventEmitter {
 
     for (i = 0; i < _this.MinerSupport.length; i++) {
       var minernames = _this.MinerSupport[i].minername
+      var minerports = _this.MinerSupport[i].minerport
       Device.dev.algorithm = Algo_1({name: _this.MinerSupport[i].algoname});
       Device.dev.crypto = cryptocurrency({name: _this.MinerSupport[i].cryptoname});
       for (j = 0; j < minernames.length; j++) {
         Device.dev.miner = Miner_1({
           name: minernames[j],
-          devPath: Device.port,
+          devPath: minerports[j],
           algo: Device.dev.algorithm,
           varity: 0,
           crypto: Device.dev.crypto

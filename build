@@ -1,0 +1,40 @@
+#!/usr/bin/env bash
+
+set -e
+
+function error {
+  echo -e "[ERROR] ${RED}${1}${RESET}"
+  exit 1
+}
+
+function error_skip {
+  echo -e "[ERROR] ${RED}${1}${RESET}"
+  exit 0
+}
+
+function info {
+  echo -e "[INFO] ${YELLOW}${1}${RESET}"
+}
+
+function success {
+  echo -e "[SUCCESS] ${GREEN}${1}${RESET}"
+}
+
+function require_binary {
+    for cmd in $1
+    do
+        info "Checking if binary ${cmd} is present"
+        command -v $cmd >/dev/null 2>&1 || \
+        {
+            error >&2 "Binary ${cmd} is required to execute this script. Aborting."
+        }
+    done
+}
+
+require_binary "docker"
+
+info "Build components proxy container ..."
+docker build \
+  -t miner:latest \
+  -f ./Dockerfile .
+success "... build done."
